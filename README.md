@@ -1,4 +1,4 @@
-# 🛒 E-Commerce Automation Framework (Java)
+# 🛒 E-Commerce Automation Framework
 
 ## 📌 Overview
 This repository contains a modular and maintainable Java automation framework that simulates and tests core e-commerce workflows such as login, browsing products, adding items to the cart, checkout, order placement, and logout.  
@@ -43,8 +43,8 @@ The project follows clean architecture and good automation practices to ensure s
 
 ### 1. Clone the repository
 ```
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/nhahub/NHA-245.git
+cd NHA-245
 ```
 
 ### 2. Check Java installation
@@ -93,7 +93,7 @@ Editable via:
 
 Configurable parameters:
 - URLs  
-- Browser selection (if using Selenium)  
+- Browser selection for Selenium WebDriver Interfaces  
 - Timeouts  
 - Login credentials  
 
@@ -109,4 +109,4 @@ Configurable parameters:
 This repo can easily integrate with CI/CD (GitHub Actions, Jenkins) and support reporting tools like Allure or ExtentReports.
 
 ## 🎤 Presentation
-*(Reserved for future content)*
+https://prezi.com/view/eWNk1CRycjlOXtWTUi5N/?referral_token=fAXriGlnB3FN
