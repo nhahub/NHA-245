@@ -1,0 +1,729 @@
+{
+	"info": {
+		"_postman_id": "cff782be-0866-4fd5-987e-c33eeaff2314",
+		"name": "SwagCart API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50205212",
+		"_collection_link": "https://lasheen1155-4133870.postman.co/workspace/BugHunters~a3a82e6b-0bc2-4e62-996b-e71ebdf29dbe/collection/50462772-cff782be-0866-4fd5-987e-c33eeaff2314?action=share&source=collection_link&creator=50205212"
+	},
+	"item": [
+		{
+			"name": "cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Cart ID is 1\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"Products array contains at least one product\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.products).to.be.an(\"array\").that.is.not.empty;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/carts/1",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"carts",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get_cart1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/carts/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 19:20:23 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "x-ratelimit-limit",
+							"value": "100"
+						},
+						{
+							"key": "x-ratelimit-remaining",
+							"value": "99"
+						},
+						{
+							"key": "x-ratelimit-reset",
+							"value": "1764530429"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"461-cWRWYNLFxfrc4fzJ3x6dAiWgKps\""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Nel",
+							"value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=P2ndN9EtM4KxWC4HaMRRt5hjDmHh1VBTUDwmo41UxW7V4D3ld%2BWZa4QPplMXfrrThJ1%2FHpJCvjRVN03jMmf4rfcO5My7QBh9GVnU\"}]}"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a6cb3ac5e19d68b-IAD"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"products\": [\n        {\n            \"id\": 168,\n            \"title\": \"Charger SXT RWD\",\n            \"price\": 32999.99,\n            \"quantity\": 3,\n            \"total\": 98999.97,\n            \"discountPercentage\": 13.39,\n            \"discountedTotal\": 85743.87,\n            \"thumbnail\": \"https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/thumbnail.png\"\n        },\n        {\n            \"id\": 78,\n            \"title\": \"Apple MacBook Pro 14 Inch Space Grey\",\n            \"price\": 1999.99,\n            \"quantity\": 2,\n            \"total\": 3999.98,\n            \"discountPercentage\": 18.52,\n            \"discountedTotal\": 3259.18,\n            \"thumbnail\": \"https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png\"\n        },\n        {\n            \"id\": 183,\n            \"title\": \"Green Oval Earring\",\n            \"price\": 24.99,\n            \"quantity\": 5,\n            \"total\": 124.94999999999999,\n            \"discountPercentage\": 6.28,\n            \"discountedTotal\": 117.1,\n            \"thumbnail\": \"https://cdn.dummyjson.com/products/images/womens-jewellery/Green%20Oval%20Earring/thumbnail.png\"\n        },\n        {\n            \"id\": 100,\n            \"title\": \"Apple Airpods\",\n            \"price\": 129.99,\n            \"quantity\": 5,\n            \"total\": 649.95,\n            \"discountPercentage\": 12.84,\n            \"discountedTotal\": 566.5,\n            \"thumbnail\": \"https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/thumbnail.png\"\n        }\n    ],\n    \"total\": 103774.85,\n    \"discountedTotal\": 89686.65,\n    \"userId\": 33,\n    \"totalProducts\": 4,\n    \"totalQuantity\": 15\n}"
+				}
+			]
+		},
+		{
+			"name": "Add to Cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"// Product added\r",
+							"pm.test(\"New product added to cart\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    const addedProduct = jsonData.products.find(p => p.id === 50);\r",
+							"    pm.expect(addedProduct).to.not.be.undefined;\r",
+							"    pm.expect(addedProduct.quantity).to.eql(2);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 33,\r\n  \"products\": [\r\n    { \"id\": 50, \"quantity\": 2 }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/carts/add",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"carts",
+						"add"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add_cart1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 33,\r\n  \"products\": [\r\n    { \"id\": 50, \"quantity\": 2 }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/carts/add",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"carts",
+								"add"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 19:24:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "327"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "x-ratelimit-limit",
+							"value": "100"
+						},
+						{
+							"key": "x-ratelimit-remaining",
+							"value": "99"
+						},
+						{
+							"key": "x-ratelimit-reset",
+							"value": "1764530679"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"147-WZxd48s8n30N1Y0Gz2wsQf5fk30\""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Nel",
+							"value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Q3%2F17U8LI5aJ24si0D6HY1Ys4zA7i%2F8g%2B8Nm%2Fn6XW%2BORy3X93O%2Fdf%2Bj8RUaeECVvbcr4E%2BFU%2F7Affo6Q7C4D5xntVl5DoPj8xe3oSag%3D\"}]}"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a6cb9afdde5a504-IAD"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 51,\n    \"products\": [\n        {\n            \"id\": 50,\n            \"title\": \"Black Whisk\",\n            \"price\": 9.99,\n            \"quantity\": 2,\n            \"total\": 19.98,\n            \"discountPercentage\": 10.24,\n            \"discountedPrice\": 18,\n            \"thumbnail\": \"https://cdn.dummyjson.com/product-images/kitchen-accessories/black-whisk/thumbnail.webp\"\n        }\n    ],\n    \"total\": 19.98,\n    \"discountedTotal\": 18,\n    \"userId\": 33,\n    \"totalProducts\": 1,\n    \"totalQuantity\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Remove Item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Product removed\r",
+							"pm.test(\"Removed product not in cart\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    const removedProduct = jsonData.products.find(p => p.id === 50);\r",
+							"    pm.expect(removedProduct).to.be.undefined;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"products\": [\r\n    {\r\n      \"id\": 168,\r\n      \"quantity\": 3\r\n    },\r\n    {\r\n      \"id\": 183,\r\n      \"quantity\": 5\r\n    },\r\n    {\r\n      \"id\": 100,\r\n      \"quantity\": 5\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/carts/1",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"carts",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "remove1",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"products\": [\r\n    {\r\n      \"id\": 168,\r\n      \"quantity\": 3\r\n    },\r\n    {\r\n      \"id\": 183,\r\n      \"quantity\": 5\r\n    },\r\n    {\r\n      \"id\": 100,\r\n      \"quantity\": 5\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/carts/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 19:28:31 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "x-ratelimit-limit",
+							"value": "100"
+						},
+						{
+							"key": "x-ratelimit-remaining",
+							"value": "99"
+						},
+						{
+							"key": "x-ratelimit-reset",
+							"value": "1764530919"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"499-PpC4gvlx1h4roY5k1cSqzKjPjAw\""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Nel",
+							"value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=tMP9jfJMGBJHT4wz0jbwcGH0mzWgegyDaiQtgD%2Fq7uDhHP%2F2XOipqGsGPG8bz4WseS7w%2F9Vos74GDpJCmM%2F0nizwxXUT9Q%2FpwoO53xk%3D\"}]}"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a6cbf950d0e07f9-IAD"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"products\": [\n        {\n            \"id\": 168,\n            \"title\": \"Charger SXT RWD\",\n            \"price\": 32999.99,\n            \"quantity\": 3,\n            \"total\": 98999.97,\n            \"discountPercentage\": 13.39,\n            \"discountedTotal\": 85743.87,\n            \"thumbnail\": \"https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/thumbnail.png\"\n        },\n        {\n            \"id\": 78,\n            \"title\": \"Apple MacBook Pro 14 Inch Space Grey\",\n            \"price\": 1999.99,\n            \"quantity\": 2,\n            \"total\": 3999.98,\n            \"discountPercentage\": 18.52,\n            \"discountedTotal\": 3259.18,\n            \"thumbnail\": \"https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png\"\n        },\n        {\n            \"id\": 183,\n            \"title\": \"Green Oval Earring\",\n            \"price\": 24.99,\n            \"quantity\": 5,\n            \"total\": 124.94999999999999,\n            \"discountPercentage\": 6.28,\n            \"discountedTotal\": 117.1,\n            \"thumbnail\": \"https://cdn.dummyjson.com/products/images/womens-jewellery/Green%20Oval%20Earring/thumbnail.png\"\n        },\n        {\n            \"id\": 100,\n            \"title\": \"Apple Airpods\",\n            \"price\": 129.99,\n            \"quantity\": 5,\n            \"total\": 649.95,\n            \"discountPercentage\": 12.84,\n            \"discountedTotal\": 566.5,\n            \"thumbnail\": \"https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/thumbnail.png\"\n        }\n    ],\n    \"total\": 103774.85,\n    \"discountedTotal\": 89686.65,\n    \"userId\": 33,\n    \"totalProducts\": 4,\n    \"totalQuantity\": 15,\n    \"isDeleted\": true,\n    \"deletedOn\": \"2025-11-30T19:28:31.542Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Clear Cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Cart is empty\r",
+							"pm.test(\"Cart is empty after clearing\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.products.length).to.eql(0);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"products\": []\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/carts/1",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"carts",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "clear1",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"products\": []\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/carts/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 19:30:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "x-ratelimit-limit",
+							"value": "100"
+						},
+						{
+							"key": "x-ratelimit-remaining",
+							"value": "99"
+						},
+						{
+							"key": "x-ratelimit-reset",
+							"value": "1764531049"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"64-dxLUo8auEazDqDG8DByyGsosSVM\""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Nel",
+							"value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Fmw6vwkdQaGG2gV9NgqBq5YtIchIkA4hi%2FEONb6DmgBVNX%2BN%2BspSDxTAyvMfs7XOZAvMDo4UgEyjkXTBLK58TQfdHC1pWh0%2F7kDYWZQ%3D\"}]}"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a6cc2b23ba6d634-IAD"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"products\": [],\n    \"total\": 0,\n    \"discountedTotal\": 0,\n    \"userId\": 33,\n    \"totalProducts\": 0,\n    \"totalQuantity\": 0\n}"
+				}
+			]
+		}
+	]
+}

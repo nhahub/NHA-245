@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "a932e1c8-dbc4-4fbe-9d2e-fc06f7547cb9",
+		"name": "Checkout",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50205212",
+		"_collection_link": "https://lasheen1155-4133870.postman.co/workspace/BugHunters~a3a82e6b-0bc2-4e62-996b-e71ebdf29dbe/collection/50462772-a932e1c8-dbc4-4fbe-9d2e-fc06f7547cb9?action=share&source=collection_link&creator=50205212"
+	},
+	"item": [
+		{
+			"name": "Checkout Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/carts/1",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"carts",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "checkout summary",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/carts/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 19:40:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "x-ratelimit-limit",
+							"value": "100"
+						},
+						{
+							"key": "x-ratelimit-remaining",
+							"value": "99"
+						},
+						{
+							"key": "x-ratelimit-reset",
+							"value": "1764531629"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"461-cWRWYNLFxfrc4fzJ3x6dAiWgKps\""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Nel",
+							"value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=0H4YnmFPGSx2TZCNDKmZJl7ynBafAtWaMQt%2FIpu2KNCdGAH0GCADgwwZadltE0pT4DOn0XlUjwUXWg8MRB6u34RnfZoAfRtBuJ349k4%3D\"}]}"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a6cd0d96fd9c814-IAD"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"products\": [\n        {\n            \"id\": 168,\n            \"title\": \"Charger SXT RWD\",\n            \"price\": 32999.99,\n            \"quantity\": 3,\n            \"total\": 98999.97,\n            \"discountPercentage\": 13.39,\n            \"discountedTotal\": 85743.87,\n            \"thumbnail\": \"https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/thumbnail.png\"\n        },\n        {\n            \"id\": 78,\n            \"title\": \"Apple MacBook Pro 14 Inch Space Grey\",\n            \"price\": 1999.99,\n            \"quantity\": 2,\n            \"total\": 3999.98,\n            \"discountPercentage\": 18.52,\n            \"discountedTotal\": 3259.18,\n            \"thumbnail\": \"https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png\"\n        },\n        {\n            \"id\": 183,\n            \"title\": \"Green Oval Earring\",\n            \"price\": 24.99,\n            \"quantity\": 5,\n            \"total\": 124.94999999999999,\n            \"discountPercentage\": 6.28,\n            \"discountedTotal\": 117.1,\n            \"thumbnail\": \"https://cdn.dummyjson.com/products/images/womens-jewellery/Green%20Oval%20Earring/thumbnail.png\"\n        },\n        {\n            \"id\": 100,\n            \"title\": \"Apple Airpods\",\n            \"price\": 129.99,\n            \"quantity\": 5,\n            \"total\": 649.95,\n            \"discountPercentage\": 12.84,\n            \"discountedTotal\": 566.5,\n            \"thumbnail\": \"https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/thumbnail.png\"\n        }\n    ],\n    \"total\": 103774.85,\n    \"discountedTotal\": 89686.65,\n    \"userId\": 33,\n    \"totalProducts\": 4,\n    \"totalQuantity\": 15\n}"
+				}
+			]
+		},
+		{
+			"name": "Submit Checkout",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"// Cart totals exist\r",
+							"pm.test(\"Cart has total and discountedTotal\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.total).to.be.a(\"number\");\r",
+							"    pm.expect(jsonData.discountedTotal).to.be.a(\"number\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 33,\r\n  \"products\": [\r\n    { \"id\": 168, \"quantity\": 3 },\r\n    { \"id\": 78, \"quantity\": 2 },\r\n    { \"id\": 183, \"quantity\": 5 },\r\n    { \"id\": 100, \"quantity\": 5 }\r\n  ],\r\n  \"checkout\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/carts/add",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"carts",
+						"add"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Submit Checkout",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 33,\r\n  \"products\": [\r\n    { \"id\": 168, \"quantity\": 3 },\r\n    { \"id\": 78, \"quantity\": 2 },\r\n    { \"id\": 183, \"quantity\": 5 },\r\n    { \"id\": 100, \"quantity\": 5 }\r\n  ],\r\n  \"checkout\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/carts/add",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"carts",
+								"add"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 19:42:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "x-ratelimit-limit",
+							"value": "100"
+						},
+						{
+							"key": "x-ratelimit-remaining",
+							"value": "99"
+						},
+						{
+							"key": "x-ratelimit-reset",
+							"value": "1764531739"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"44a-G+vkXLsNp8CrnsGPw2VNa3iBpzI\""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Nel",
+							"value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=43gQ2%2BSJJh3p0TtBwICUvfmiA%2BHyOX5%2FzzLfqJRqzhUDaqRu5bvfd1XmiPi4grRez0%2BoGBKbnTX4nAJZkdD%2BNZSagjgC3sArjjV%2F\"}]}"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a6cd3c2ff36d695-IAD"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 51,\n    \"products\": [\n        {\n            \"id\": 78,\n            \"title\": \"Apple MacBook Pro 14 Inch Space Grey\",\n            \"price\": 1999.99,\n            \"quantity\": 3,\n            \"total\": 5999.97,\n            \"discountPercentage\": 4.69,\n            \"discountedPrice\": 5719,\n            \"thumbnail\": \"https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/thumbnail.webp\"\n        },\n        {\n            \"id\": 100,\n            \"title\": \"Apple Airpods\",\n            \"price\": 129.99,\n            \"quantity\": 2,\n            \"total\": 259.98,\n            \"discountPercentage\": 15.54,\n            \"discountedPrice\": 220,\n            \"thumbnail\": \"https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/thumbnail.webp\"\n        },\n        {\n            \"id\": 168,\n            \"title\": \"Charger SXT RWD\",\n            \"price\": 32999.99,\n            \"quantity\": 5,\n            \"total\": 164999.94999999998,\n            \"discountPercentage\": 8.23,\n            \"discountedPrice\": 151420,\n            \"thumbnail\": \"https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/thumbnail.webp\"\n        },\n        {\n            \"id\": 183,\n            \"title\": \"Green Oval Earring\",\n            \"price\": 24.99,\n            \"quantity\": 5,\n            \"total\": 124.94999999999999,\n            \"discountPercentage\": 15.18,\n            \"discountedPrice\": 106,\n            \"thumbnail\": \"https://cdn.dummyjson.com/product-images/womens-jewellery/green-oval-earring/thumbnail.webp\"\n        }\n    ],\n    \"total\": 171384.85,\n    \"discountedTotal\": 157465,\n    \"userId\": 33,\n    \"totalProducts\": 4,\n    \"totalQuantity\": 15\n}"
+				}
+			]
+		},
+		{
+			"name": "Clear Cart",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"products\": []\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/carts/1",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"carts",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "clear after complete check out",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"products\": []\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/carts/1",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 19:45:38 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "x-ratelimit-limit",
+							"value": "100"
+						},
+						{
+							"key": "x-ratelimit-remaining",
+							"value": "99"
+						},
+						{
+							"key": "x-ratelimit-reset",
+							"value": "1764531949"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"64-dxLUo8auEazDqDG8DByyGsosSVM\""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Nel",
+							"value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=BNAe%2BIGGiDNDLcI80pNXg0scJo0ErmZKi6SW3pZ0gyUGYSP17WfWkDpotHg1FzlTpML6h1DTATivhXNr8XPiuChHiLs509wOTCEicl0%3D\"}]}"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a6cd8a789020576-IAD"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"products\": [],\n    \"total\": 0,\n    \"discountedTotal\": 0,\n    \"userId\": 33,\n    \"totalProducts\": 0,\n    \"totalQuantity\": 0\n}"
+				}
+			]
+		}
+	]
+}

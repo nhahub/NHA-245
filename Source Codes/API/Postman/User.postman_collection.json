@@ -1,0 +1,869 @@
+{
+	"info": {
+		"_postman_id": "96bf749f-780c-47ec-994a-774c7980dcf8",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50205212",
+		"_collection_link": "https://lasheen1155-4133870.postman.co/workspace/BugHunters~a3a82e6b-0bc2-4e62-996b-e71ebdf29dbe/collection/50205212-96bf749f-780c-47ec-994a-774c7980dcf8?action=share&source=collection_link&creator=50205212"
+	},
+	"item": [
+		{
+			"name": "addNewUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"  pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\":\"{{$randomFirstName}}\",\r\n  \"lastName\": \"{{$randomLastName}}\",\r\n  \"password\": \"{{$randomPassword}}\",\r\n  \"age\":18\r\n\r\n\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{UsersURL}}/add",
+					"host": [
+						"{{UsersURL}}"
+					],
+					"path": [
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUsers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    \r",
+							"    let jsonData = pm.response.json();\r",
+							"    let firstUser = jsonData.users[0];\r",
+							"    pm.environment.set(\"username\", firstUser.username);\r",
+							"    pm.environment.set(\"password\", firstUser.password);\r",
+							"    pm.environment.set(\"ID\", firstUser.id);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{UsersURL}}",
+					"host": [
+						"{{UsersURL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"    let responseJson = pm.response.json();\r",
+							"    pm.environment.set(\"token\", responseJson.accessToken);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"password\" : \"{{password}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{UsersURL}}/login",
+					"host": [
+						"{{UsersURL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAuthUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{UsersURL}}/me",
+					"host": [
+						"{{UsersURL}}"
+					],
+					"path": [
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Sarah\",\r\n    \"age\" : \"29\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{UsersURL}}/{{ID}}",
+					"host": [
+						"{{UsersURL}}"
+					],
+					"path": [
+						"{{ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Sarah\",\r\n    \"age\" : \"29\"\r\n}"
+				},
+				"url": {
+					"raw": "{{UsersURL}}/{{ID}}",
+					"host": [
+						"{{UsersURL}}"
+					],
+					"path": [
+						"{{ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{UsersURL}}/1",
+					"host": [
+						"{{UsersURL}}"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Users contain correct fields when results exist\", function () {\r",
+							"    const json = pm.response.json();\r",
+							"    const users = json.users;\r",
+							"\r",
+							"    if (users.length > 0) {\r",
+							"        pm.expect(users[0]).to.have.property(\"id\");\r",
+							"        pm.expect(users[0]).to.have.property(\"firstName\");\r",
+							"        pm.expect(users[0].firstName).to.eql(\"Emily\");\r",
+							"        pm.expect(users[0]).to.have.property(\"lastName\");\r",
+							"        pm.expect(users[0]).to.have.property(\"age\");\r",
+							"    } else {\r",
+							"        pm.expect(json.total).to.eql(0);\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.variables.set(\"searchTerm\", \"Emily\");\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{UsersURL}}/search?q={{searchTerm}}",
+					"host": [
+						"{{UsersURL}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{{searchTerm}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 1) Status code\r",
+							"pm.test(\"Status is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"// Prepare data\r",
+							"const json = pm.response.json();\r",
+							"const users = json.users;\r",
+							"\r",
+							"// Read the filter key & value directly from the request URL (AUTOMATED)\r",
+							"const filterKey = pm.request.url.query.get(\"key\");       \r",
+							"const filterValue = pm.request.url.query.get(\"value\");   \r",
+							"\r",
+							"\r",
+							"pm.test(\"Users array exists\", function () {\r",
+							"    pm.expect(users).to.be.an(\"array\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"User objects contain required fields\", function () {\r",
+							"    if (users.length > 0) {\r",
+							"        pm.expect(users[0]).to.have.property(\"id\");\r",
+							"        pm.expect(users[0]).to.have.property(\"firstName\");\r",
+							"        pm.expect(users[0]).to.have.property(\"lastName\");\r",
+							"        pm.expect(users[0]).to.have.property(\"age\");\r",
+							"    } else {\r",
+							"        pm.expect(json.total).to.eql(0);   \r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"// 5) Every user matches the filter (MAIN TEST)\r",
+							"pm.test(\"All results match the filter\", function () {\r",
+							"    if (users.length > 0) {\r",
+							"        users.forEach(user => {\r",
+							"            const value = String(user[filterKey]).toLowerCase();\r",
+							"            pm.expect(value).to.include(filterValue.toLowerCase());\r",
+							"        });\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{UsersURL}}/filter?key=firstName&value=Emily",
+					"host": [
+						"{{UsersURL}}"
+					],
+					"path": [
+						"filter"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "firstName"
+						},
+						{
+							"key": "value",
+							"value": "Emily"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sort User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const json = pm.response.json();\r",
+							"const users = json.users || [];\r",
+							"\r",
+							"\r",
+							"pm.test(\"Each user has an age property\", function () {\r",
+							"    users.forEach(u => {\r",
+							"        pm.expect(u).to.have.property(\"age\");\r",
+							"        // age should be a number\r",
+							"        pm.expect(u.age).to.be.a(\"number\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Users sorted by age ascending\", function () {\r",
+							"    for (let i = 1; i < users.length; i++) {\r",
+							"        pm.expect(users[i].age).to.be.at.least(users[i-1].age);\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/users?sortBy=age&order=asc",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "age"
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Limit and Skip Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const json = pm.response.json();\r",
+							"pm.test(\"Returned exactly 5 users\", function () {\r",
+							"    pm.expect(json.users.length).to.equal(5);\r",
+							"});\r",
+							"pm.test(\"Skip 10 users (first user ID should be > 10)\", function () {\r",
+							"    const firstUser = json.users[0];\r",
+							"    pm.expect(firstUser.id).to.be.above(10);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Users contain only firstName and ID\", function () {\r",
+							"    const users = json.users;\r",
+							"\r",
+							"    users.forEach(u => {\r",
+							"        const keys = Object.keys(u);\r",
+							"\r",
+							"        pm.expect(keys).to.include(\"firstName\");\r",
+							"        pm.expect(keys).to.include(\"id\");\r",
+							"\r",
+							"        // Should NOT include anything else\r",
+							"        pm.expect(keys.length).to.equal(2);\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/users?limit=5&skip=10&select=firstName,id'",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "skip",
+							"value": "10"
+						},
+						{
+							"key": "select",
+							"value": "firstName,id'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all posts tags",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Each tag item contains slug, name, url\", function () {\r",
+							"    const tags = pm.response.json();\r",
+							"\r",
+							"    tags.forEach(t => {\r",
+							"        pm.expect(t).to.have.property(\"slug\");\r",
+							"        pm.expect(t).to.have.property(\"name\");\r",
+							"        pm.expect(t).to.have.property(\"url\");\r",
+							"\r",
+							"        pm.expect(t.slug).to.be.a(\"string\");\r",
+							"        pm.expect(t.name).to.be.a(\"string\");\r",
+							"        pm.expect(t.url).to.be.a(\"string\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{PostURl}}/tags",
+					"host": [
+						"{{PostURl}}"
+					],
+					"path": [
+						"tags"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get posts by a tag",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const json = pm.response.json();\r",
+							"const posts = json.posts;\r",
+							"pm.test(\"Status is 200\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Each post contains 'life' in tags\", function () {\r",
+							"    posts.forEach(p => {\r",
+							"        pm.expect(p.tags).to.include(\"life\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Total matches the number of posts returned\", function () {\r",
+							"    pm.expect(json.total).to.equal(posts.length);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{PostURl}}/tag/life",
+					"host": [
+						"{{PostURl}}"
+					],
+					"path": [
+						"tag",
+						"life"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user's carts by user id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const json = pm.response.json();\r",
+							"const carts = json.carts;\r",
+							"\r",
+							"pm.test(\"Status is 200\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Carts array exists\", function () {\r",
+							"    pm.expect(carts).to.be.an(\"array\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Each cart belongs to user 6\", function () {\r",
+							"    carts.forEach(c => {\r",
+							"        pm.expect(c.userId).to.equal(6);\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Cart contains required fields\", function () {\r",
+							"    carts.forEach(c => {\r",
+							"        pm.expect(c).to.have.property(\"total\");\r",
+							"        pm.expect(c).to.have.property(\"products\");\r",
+							"        pm.expect(c.products).to.be.an(\"array\");\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{UsersURL}}/6/carts",
+					"host": [
+						"{{UsersURL}}"
+					],
+					"path": [
+						"6",
+						"carts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user's posts by user id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const json = pm.response.json();\r",
+							"const posts = json.posts;\r",
+							"\r",
+							"pm.test(\"Status is 200\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Posts array exists\", function () {\r",
+							"    pm.expect(posts).to.be.an(\"array\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Each post belongs to user 5\", function () {\r",
+							"    posts.forEach(p => {\r",
+							"        pm.expect(p.userId).to.equal(5);\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Each post contains required fields\", function () {\r",
+							"    posts.forEach(p => {\r",
+							"        pm.expect(p).to.have.property(\"title\");\r",
+							"        pm.expect(p).to.have.property(\"body\");\r",
+							"        pm.expect(p).to.have.property(\"tags\");\r",
+							"        pm.expect(p.tags).to.be.an(\"array\");\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{UsersURL}}/5/posts",
+					"host": [
+						"{{UsersURL}}"
+					],
+					"path": [
+						"5",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user's todos by user id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const json = pm.response.json();\r",
+							"const todos = json.todos;\r",
+							"\r",
+							"pm.test(\"Status is 200\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Todos array exists\", function () {\r",
+							"    pm.expect(todos).to.be.an(\"array\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Each todo belongs to user 6\", function () {\r",
+							"    todos.forEach(t => {\r",
+							"        pm.expect(t.userId).to.equal(6);\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Todo has required fields\", function () {\r",
+							"    todos.forEach(t => {\r",
+							"        pm.expect(t).to.have.property(\"todo\");\r",
+							"        pm.expect(t).to.have.property(\"completed\");\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{UsersURL}}/6/todos",
+					"host": [
+						"{{UsersURL}}"
+					],
+					"path": [
+						"6",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
