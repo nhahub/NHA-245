@@ -3,115 +3,161 @@
 ## 🎤 Presentation
 https://prezi.com/view/eWNk1CRycjlOXtWTUi5N/?referral_token=fAXriGlnB3FN
 
-## 📌 Overview
-This repository contains a modular and maintainable Java automation framework that simulates and tests core e-commerce workflows such as login, browsing products, adding items to the cart, checkout, order placement, and logout.  
-The project follows clean architecture and good automation practices to ensure scalability, readability, and reliability.
 
-## ✨ Key Features
-- 🔐 Login & Logout automation
-- 🛍️ Product browsing and selection
-- 🛒 Cart operations with cart state management
-- 💳 Checkout workflow automation
-- 📦 Order creation & validation
-- 🧪 Unified test execution using TestNG/JUnit
-- ⚙️ Configurable setup with BaseClass
-- 🏗️ Clean, modular, and maintainable structure
+# 🐞 Bughunters Automation Framework
 
-## 🧰 Technologies Used
-- Java  
-- TestNG / JUnit  
-- Maven or Gradle  
-- Git / GitHub  
+## 📌 Overview  
+This repository contains a **modular, scalable, and maintainable Java automation testing framework** built to simulate and validate **core e-commerce workflows** on the **Swag Labs Demo Application**.  
+The framework automates real user scenarios such as **login, product browsing, cart operations, checkout, order placement, and logout**, following **clean architecture principles and industry best practices**.
 
-## 📁 Project Structure
+The project is implemented using the **Page Object Model (POM)** design pattern to ensure **high reusability, readability, and long-term maintainability**.
+
+---
+
+## ✨ Key Features  
+- 🔐 **Login & Logout automation**
+- 🛍️ **Product browsing and selection**
+- 🛒 **Cart operations with cart state validation**
+- 💳 **Checkout workflow automation**
+- 📦 **Order creation & validation**
+- 🧪 **Unified test execution using TestNG**
+- ⚙️ **Centralized setup via BaseTest & DriverFactory**
+- 🏗️ **Clean, modular, and scalable project structure**
+- 🔄 **Full end-to-end user journey testing**
+
+---
+
+## 🧰 Technologies Used  
+- **Java**  
+- **Selenium WebDriver**  
+- **TestNG**  
+- **Maven**  
+- **WebDriverManager**  
+- **Git / GitHub**  
+- **Page Object Model (POM)** Design Pattern  
+
+---
+
+## 📁 Project Structure  
+
 ```
 /src
  └── main
       └── java
-           ├── BaseClass.java
-           ├── Login.java
-           ├── Logout.java
-           ├── Products.java
-           ├── Cart.java
-           ├── CartState.java
-           ├── Checkout.java
-           ├── Order.java
+           ├── base
+           │    ├── BaseTest.java
+           │    └── DriverFactory.java
+           │
+           ├── pages
+           │    ├── LoginPage.java
+           │    ├── ProductsPage.java
+           │    ├── CartPage.java
+           │    ├── CheckoutPage.java
+           │    ├── OrderPage.java
+           │    └── LogoutPage.java
+           │
+           └── utils
+                ├── WaitUtils.java
+                └── CartState.java
  └── test
       └── java
-           ├── AppTest.java
-           ├── AllTests.java
+           ├── LoginTest.java
+           ├── ProductsTest.java
+           ├── CartTest.java
+           ├── CheckoutTest.java
+           ├── OrderTest.java
+           ├── LogoutTest.java
+           └── FullJourneyTest.java
+
+testng.xml
+pom.xml
 ```
 
-## ⚙️ Setup Instructions
+---
 
-### 1. Clone the repository
+## ⚙️ Setup Instructions  
+
+### 1. Clone the Repository  
 ```
-git clone https://github.com/nhahub/NHA-245.git
-cd NHA-245
+git clone https://github.com/your-username/Bughunters-Automation.git
+cd Bughunters-Automation
 ```
 
-### 2. Check Java installation
+### 2. Check Java Installation  
 ```
 java -version
 ```
 
-### 3. Install dependencies  
-If using Maven:
+### 3. Install Dependencies  
+Using Maven:
 ```
-mvn install
-```
-
-If using Gradle:
-```
-gradle build
+mvn clean install
 ```
 
-## 📥 Installation
-Ensure you have:
-- Java 8 or higher  
-- Maven/Gradle  
-- TestNG or JUnit  
+---
 
-## ▶️ Running Tests
+## 📥 Installation Requirements  
+Ensure you have the following installed on your system:
 
-### Maven:
+- ✅ Java 8 or higher  
+- ✅ Maven  
+- ✅ Google Chrome / Firefox  
+- ✅ Internet connection for WebDriverManager  
+
+---
+
+## ▶️ Running Tests  
+
+### ✅ Run All Tests Using Maven  
 ```
 mvn test
 ```
 
-### TestNG suite:
+### ✅ Run Using TestNG Suite  
 ```
 mvn test -DsuiteXmlFile=testng.xml
 ```
 
-### Gradle:
-```
-./gradlew test
-```
+---
 
-## 🔧 Configurations
-Editable via:
-- config.properties  
-- BaseClass.java  
+## 🔧 Configurations  
 
-Configurable parameters:
-- URLs  
-- Browser selection for Selenium WebDriver Interfaces  
-- Timeouts  
-- Login credentials  
+Editable through:
+- `BaseTest.java`
+- Browser setup via `DriverFactory.java`
 
-## 🧹 Best Practices Followed
-- Clean code & naming conventions  
-- Separation of concerns  
-- Reusable methods and modules  
-- Test isolation  
-- Centralized configuration  
-- Scalability-first structure  
+Configurable parameters include:
+- 🌐 Application URL  
+- 🌍 Browser type  
+- ⏱️ Timeouts  
+- 👤 Login credentials  
 
-## 📈 Additional Notes
-This repo can easily integrate with CI/CD (GitHub Actions, Jenkins) and support reporting tools like Allure or ExtentReports.
+---
 
-# 📄 End of Automation Documentation
+## 🧹 Best Practices Followed  
+- ✅ Clean code and clear naming conventions  
+- ✅ Page Object Model (POM) architecture  
+- ✅ Separation of concerns  
+- ✅ Reusable utilities  
+- ✅ Test isolation  
+- ✅ Centralized browser management  
+- ✅ Scalable framework design  
+
+---
+
+## 📈 Additional Notes  
+
+- 🚀 The framework is **CI/CD ready** and can be integrated easily with:
+  - GitHub Actions  
+  - Jenkins  
+- 📊 Supports future integration with:
+  - Allure Reports  
+  - Extent Reports  
+- 🔐 Designed for **full regression and smoke testing**  
+
+---
+
+# 📄 End of Automation Documentation  
 
 # 📡 API Documentation
 
