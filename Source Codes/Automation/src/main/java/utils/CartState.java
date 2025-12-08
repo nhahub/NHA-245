@@ -1,4 +1,4 @@
-package features;
+package utils;
 
 public class CartState {
 
